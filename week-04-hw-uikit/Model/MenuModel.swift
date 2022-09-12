@@ -5,7 +5,7 @@
 //  Created by Deonte Kilgore on 9/11/22.
 //
 
-import Foundation
+import SwiftUI
 
 enum CourseCategory: CaseIterable {
     case appetizer
@@ -33,6 +33,7 @@ enum CourseCategory: CaseIterable {
 protocol Menu {
     var category: CourseCategory { get }
     var image: String { get }
+    var color: Color { get }
     var title: String { get }
     var description: String { get }
     var calories: Int { get }
@@ -45,6 +46,7 @@ struct MenuItem: Menu, Identifiable {
     let id = UUID()
     var category: CourseCategory
     var image: String
+    var color: Color
     var title: String
     var description: String
     var calories: Int
@@ -57,6 +59,7 @@ struct MockMenu {
     static let data = [
         MenuItem(category: .appetizer,
                  image: "🍗",
+                 color: .orange,
                  title: "Spicy Chicken Bites",
                  description: "Fresh and tender hand-cut chicken tossed in a sweet and spicy chili-ginger sauce.",
                  calories: 740,
@@ -66,6 +69,7 @@ struct MockMenu {
         
         MenuItem(category: .entrees,
                  image: "🥩",
+                 color: .green,
                  title: "House Filet",
                  description: "Exceptionally tender center-cut filet grilled with our signature seasoning.",
                  calories: 860,
@@ -75,6 +79,7 @@ struct MockMenu {
         
         MenuItem(category: .desserts,
                  image: "🍩",
+                 color: .brown,
                  title: "Chocolate Dougnut",
                  description: "Dark chocolate dougnut with a warm, fudge center. Served with vanilla bean ice cream.",
                  calories: 1150,
@@ -84,6 +89,7 @@ struct MockMenu {
         
         MenuItem(category: .drinks,
                  image: "🥤",
+                 color: .pink,
                  title: "Strawberry Lemonade",
                  description: "Crisp and delicious.",
                  calories: 200,
@@ -92,7 +98,8 @@ struct MockMenu {
                  rating: 4.3),
         
         MenuItem(category: .sides,
-                 image: "🥤",
+                 image: "🍛",
+                 color: .blue,
                  title: "Loaded Potato Soup",
                  description: "Creamy potato soup loaded with bacon, cheddar and fresh green onions.",
                  calories: 380,
@@ -102,6 +109,7 @@ struct MockMenu {
         
         MenuItem(category: .appetizer,
                  image: "🍗",
+                 color: .cyan,
                  title: "Spicy Chicken Bites",
                  description: "Fresh and tender hand-cut chicken tossed in a sweet and spicy chili-ginger sauce.",
                  calories: 740,
@@ -111,6 +119,7 @@ struct MockMenu {
         
         MenuItem(category: .entrees,
                  image: "🥩",
+                 color: .mint,
                  title: "House Filet",
                  description: "Exceptionally tender center-cut filet grilled with our signature seasoning.",
                  calories: 860,
@@ -120,6 +129,7 @@ struct MockMenu {
         
         MenuItem(category: .desserts,
                  image: "🍩",
+                 color: .indigo,
                  title: "Chocolate Dougnut",
                  description: "Dark chocolate dougnut with a warm, fudge center. Served with vanilla bean ice cream.",
                  calories: 1150,
@@ -129,6 +139,7 @@ struct MockMenu {
         
         MenuItem(category: .drinks,
                  image: "🥤",
+                 color: .yellow,
                  title: "Strawberry Lemonade",
                  description: "Crisp and delicious.",
                  calories: 200,
@@ -137,7 +148,8 @@ struct MockMenu {
                  rating: 4.3),
         
         MenuItem(category: .sides,
-                 image: "🥤",
+                 image: "🍛",
+                 color: .pink,
                  title: "Loaded Potato Soup",
                  description: "Creamy potato soup loaded with bacon, cheddar and fresh green onions.",
                  calories: 380,
